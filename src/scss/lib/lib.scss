@@ -1,0 +1,9 @@
+@function em($size, $compare){ // $size는 원래크기 , $compare 부모의 폰트크기
+    @return calc($size/$compare*1em);
+}
+
+@mixin max($width){
+    @media screen and (max-width : #{$width+"px"}) {
+        @content;       
+    }
+}

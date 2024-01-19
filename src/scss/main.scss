@@ -1,0 +1,154 @@
+._main {
+
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+
+    .tbx {
+        position: relative;
+        z-index: 2;
+        margin-right: 15%;
+        dl {
+            dt {
+                strong {
+                    font-size: 130px; 
+                    font-weight: bold;
+                }
+                small {
+                    font-size: 68px; 
+                    display: block; 
+                    font-weight: 600;
+                }
+            }
+            dd {
+                font-size: 24px; margin-top: em(20,24);
+            }
+        }
+        .sns {
+            margin-top: 10px;
+        }
+        .teach {
+            display: flex; 
+            align-items: center; 
+            margin-top: 25px;
+            
+            p {
+                white-space: nowrap;
+            }
+
+            .grid {
+                display: flex; 
+                margin-left: 20px;
+                flex-wrap: wrap;
+                div {
+                    margin: 5px;
+                }
+            }
+
+        }
+    }
+
+    .jelly {
+        width: 500px;
+        background: rgb(218, 154, 218);
+        border-radius: 60% 40% 50% 40% / 30% 40% 30% 50%;
+        position: absolute; transform: translateX(50%);
+        &::after {
+            content: ''; 
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    @include max(1280){
+
+        .tbx {
+            dl {
+                dt {
+                    strong {
+                        font-size: 100px; 
+                    }
+                    small {
+                        font-size: 48px; 
+                    }
+                }
+                dd {
+                    font-size: 18px;
+                }
+            }
+            .teach {
+                margin-top: 25px; 
+                font-size: 16px;
+            }
+        }
+
+        .jelly {
+            width: 300px;
+        }
+
+    }
+
+    @include max(820){
+
+        padding: 0 2.5%;
+        box-sizing: border-box;
+
+        .tbx {
+            margin-right: 0;
+            dl {
+                dt {
+                    strong {
+                        font-size: calc(80*100/820*1vw); 
+                    }
+                    small {
+                        font-size: calc(36*100/820*1vw);
+                    }
+                }
+                dd {
+                    font-size: 16px;
+                }
+            }
+            .teach {
+                margin-top: 25px; font-size: 16px;    
+            }
+        }
+
+        .jelly {
+            width: 300px;
+            transform: none;
+            right: 5%;
+            left: auto;
+        }
+
+    }
+
+    @include max(480) {
+
+        .tbx {
+            dl {
+                dt {
+                    strong {
+                        font-size: 62px; 
+                    }
+                    small {
+                        font-size: 30px;
+                    }
+                }
+                dd {
+                    font-size: 14px;
+                }
+            }
+            .teach {
+                font-size: 14px;
+            }
+        }
+
+        .jelly {
+            width: 250px;
+        }
+
+    }
+
+}
