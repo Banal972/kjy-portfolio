@@ -27,6 +27,11 @@ export const Circle = styled.div`
 
 // project , contact 페이지 타이틀
 export const PageTitle = styled.h1`
-    font-size : 32px;
+    font-size : 24px;
     font-weight : bold;
 `;
+
+
+export const Wrap = styled.div`
+    padding: 125px 2.5%;
+`

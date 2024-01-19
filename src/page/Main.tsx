@@ -11,7 +11,7 @@ export default function Main() {
                     <strong>Frontend</strong>
                     <small>Developer</small>
                 </dt>
-                <dd>안녕하세요 프론트엔드 주니어 개발자 김지유 입니다.</dd>
+                <dd>안녕하세요 프론트엔드 주니어 개발자 김지유 입니다. <span className='emoji'>☺️</span></dd>
             </dl>
             <div className="sns">
                 <Circle style={{width : 25}}> <img src="/images/github-mark.png" alt="깃헙" /> </Circle>

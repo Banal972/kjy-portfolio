@@ -1,0 +1,32 @@
+._contact {
+
+    .address {
+        margin-top: 25px;
+        li {
+            display: flex; align-items: center;
+            
+            + li {
+                margin-top: 15px;
+            }
+
+            a {
+                margin-left: 10px;
+            }
+
+            em {
+                font-weight: bold; margin-right: 5px;
+            }
+
+        }
+    }
+
+    .mail-send {
+        border: 1px solid #ccc; 
+        border-radius: 20px;
+        width: 80%;
+        margin: 75px auto 0;
+        padding: 50px 80px;
+        box-sizing: border-box;
+    }
+
+}

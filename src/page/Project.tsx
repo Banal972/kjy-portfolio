@@ -1,12 +1,12 @@
 import React from 'react'
-import { PageTitle } from '../Component/component'
+import { PageTitle, Wrap } from '../Component/component'
 
 export default function Project() {
   return (
-    <div className="project">
+    <Wrap className="project">
         <PageTitle>
-            My Project
+            My Project !
         </PageTitle>
-    </div>
+    </Wrap>
   )
 }

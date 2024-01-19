@@ -7,10 +7,10 @@
     width: 100%;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 20px 2.5%;
+    padding: 25px 2.5%;
 
     .name {
-        font-size: 32px;
+        font-size: 28px;
         font-weight: bold;
     }
 
@@ -60,7 +60,7 @@
     @include max(1024){
 
         .name {
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .gnb {

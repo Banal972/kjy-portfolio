@@ -25,11 +25,16 @@
                 }
             }
             dd {
-                font-size: 24px; margin-top: em(20,24);
+                font-size: 20px; 
+                margin-top: em(20,24); 
+                word-break: keep-all;
+                span {
+                    font-size: em(32,20); vertical-align: middle;
+                }
             }
         }
         .sns {
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .teach {
             display: flex; 
