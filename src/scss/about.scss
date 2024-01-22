@@ -1,0 +1,36 @@
+._about {
+    
+    
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+            border-radius: 1000px;
+            border: 1px solid #ccc;
+            flex: 1;
+            max-width: 300px;
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
+        
+        dl {
+            margin-left: 125px;
+            dt {
+                font-size: 36px;
+                font-weight: bold;
+            }
+            dd {
+                font-size: 28px;
+                font-weight: 500;
+                margin-top: em(15,28);   
+            }
+        }
+
+    }    
+
+}

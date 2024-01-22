@@ -4,6 +4,7 @@ import Header from './Layout/Header';
 import Main from './page/Main';
 import Contact from './page/Contact';
 import Project from './page/Project';
+import About from './page/About';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' >
           <Route index element={<Main/>}/>
-          <Route path='about' element={<>어바웃</>} />
+          <Route path='about' element={<About/>} />
           <Route path='project' element={<Project/>} />
           <Route path='/contact' element={<Contact/>} />
         </Route>

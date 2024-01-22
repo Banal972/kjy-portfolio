@@ -20,7 +20,19 @@ export default function Contact() {
         </ul>
 
         <div className="mail-send">
-          개발중 입니다.
+          <div className="input-box">
+            <label htmlFor="">Name</label>
+            <input type="text" id='Name' placeholder='이름을 입력해주세요.' />
+          </div>
+          <div className="input-box">
+            <label htmlFor="">Email</label>
+            <input type="text" id='Email' placeholder='이메일을 입력해주세요.' />
+          </div>
+          <div className="input-box">
+            <label htmlFor="">Message</label>
+            <textarea id="Message" placeholder='내용을 입력해주세요.'></textarea>
+          </div>
+          <button> Send </button>
         </div>
 
     </Wrap>
