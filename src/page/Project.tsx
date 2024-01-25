@@ -159,13 +159,18 @@ export default function Project() {
 
   useEffect(()=>{
 
-    axios.get('http://localhost:9000/data')
-    .then(({data})=>{
-      setResult(data);
-    })
-    .catch(e=>{
-      alert('에러가 발생했습니다.');
-    })
+    const api : string | undefined = process.env.REACT_APP_AJAX_API;
+
+    if(api){
+      axios.get(api)
+      .then(({data})=>{
+        setResult(data);
+      })
+      .catch(e=>{
+        console.log('통신 에러');
+      })
+
+    }
 
   },[]);
   
