@@ -59,10 +59,16 @@ const Card = styled.div`
       }
     }
   
+    .skill {
+      margin : 50px 0 0;
+      word-break: keep-all;
+      line-height : 1.3;
+    }
+
     .link {
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      margin : 50px 0 0;
+      margin : 25px 0 0;
       font-size : 14px;
       gap : 0 10px;
 
@@ -194,6 +200,7 @@ export default function Project() {
                       <dt>{e.title}</dt>
                       <dd>{e.desc}</dd>
                     </dl>
+                    <p className='skill'>{e.skill.map((e,i)=><span key={i}>#{e} </span>)}</p>
                     {
                       e.link &&
                       <div className={`link ${e.link.length === 1 ? "one" : ''}`}>
