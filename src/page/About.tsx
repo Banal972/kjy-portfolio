@@ -1,5 +1,5 @@
 import React from 'react'
-import { MaxWrap, PageTitle, Wrap } from '../Component/component'
+import { Jelly, MaxWrap, PageTitle, Wrap } from '../Component/component'
 import styled from 'styled-components'
 
 const Layout = styled.ul`
@@ -100,11 +100,12 @@ const Layout = styled.ul`
 
 
 export default function About() {
+
   return (
     <Wrap className="_about">
 
-        <div className="jelly"></div>
-        <div className="jelly jelly2"></div>
+        <Jelly class='jelly1' color="#78afdd"/>
+        <Jelly class='jelly2' color='#78afdd'/>
         
         <MaxWrap>
 

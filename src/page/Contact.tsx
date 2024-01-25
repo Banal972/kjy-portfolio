@@ -1,5 +1,5 @@
 import React from 'react'
-import { Circle, PageTitle, Wrap } from '../Component/component'
+import { Circle, Jelly, PageTitle, Wrap } from '../Component/component'
 
 export default function Contact() {
 
@@ -22,7 +22,7 @@ export default function Contact() {
         </ul>
 
         <div className="mail-box">
-          <div className="jelly"></div>
+          <Jelly color='#CEF5BC'/>
           <div className="mail-send">
             <div className="input-box">
               <label htmlFor="">Name</label>

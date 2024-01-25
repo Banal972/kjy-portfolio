@@ -7,11 +7,13 @@
     align-items: center; 
     justify-content: center;
     width: 100%;
+    overflow: hidden;
 
     .tbx {
         position: relative;
         z-index: 2;
-        margin-right: 15%;
+        padding-right: 20%;
+        box-sizing: border-box;
         dl {
             dt {
                 strong {
@@ -55,7 +57,28 @@
             }
 
         }
+
+        .jelly {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(10%,-50%);
+            z-index: -1;
+            width: 650px;
+            svg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
+
     }
+    
 
     @include max(1280){
 
@@ -77,10 +100,11 @@
                 margin-top: 25px; 
                 font-size: 16px;
             }
-        }
 
-        .jelly {
-            width: 300px;
+            .jelly {
+                width: 500px;
+            }
+
         }
 
     }
@@ -92,6 +116,7 @@
 
         .tbx {
             margin-right: 0;
+            padding-right: 0;
             dl {
                 dt {
                     strong {
@@ -108,13 +133,13 @@
             .teach {
                 margin-top: 25px; font-size: 16px;    
             }
-        }
 
-        .jelly {
-            width: 300px;
-            transform: none;
-            right: 5%;
-            left: auto;
+            .jelly {
+                width: 400*100/820*1vw;
+                transform: translate(0,-50%);
+                right: -15%;
+            }
+
         }
 
     }
@@ -138,10 +163,11 @@
             .teach {
                 font-size: 14px;
             }
-        }
 
-        .jelly {
-            width: 250px;
+            .jelly {
+                width: 300px;
+            }
+
         }
 
     }

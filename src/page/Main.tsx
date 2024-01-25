@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Circle, Jelly } from '../Component/component'
+import gsap from 'gsap';
 
 export default function Main() {
     
@@ -33,9 +34,11 @@ export default function Main() {
                     <Circle> <img src="/images/nextjs.png" alt="NextJS" /> </Circle>
                 </div>
             </div>
+
+            <Jelly/>
+
         </div>
 
-        <Jelly/>
 
     </div>
 
