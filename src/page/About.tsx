@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jelly, MaxWrap, PageTitle, Wrap } from '../Component/component'
+import { Jelly, MaxWrap, Wrap } from '../Component/component'
 import styled from 'styled-components'
 
 const Layout = styled.ul`
@@ -98,7 +98,6 @@ const Layout = styled.ul`
 
 `;
 
-
 export default function About() {
 
   return (
@@ -110,7 +109,8 @@ export default function About() {
         <MaxWrap>
 
             <div className="center">
-                <div className="img">
+                <div className="img" style={{backgroundImage: "url(/images/profile.jpg)"}}>
+                    <div className="circle"></div>
                 </div>
                 <dl>
                     <dt>안녕하세요!</dt>

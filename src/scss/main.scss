@@ -135,7 +135,7 @@
             }
 
             .jelly {
-                width: 400*100/820*1vw;
+                width: calc(400*100/820*1vw);
                 transform: translate(0,-50%);
                 right: -15%;
             }

@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const Grid = styled.div`
   display : grid;
+  gap : 5px;
   grid-template-columns: repeat(3,1fr);
   margin-top : 25px;
 
@@ -20,13 +21,15 @@ const Grid = styled.div`
 
 const Card = styled.div`
 
-  border : 1px solid #ccc;
-  margin : -1px;
   display : flex;
   flex-direction: column;
+  border : 1px solid #ccc;
 
   .background {
     background-color : #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
     &::after {
       content: '';
       display: block;
@@ -38,6 +41,7 @@ const Card = styled.div`
 
     padding : 25px 3%;
     box-sizing: border-box;
+    border-top : 1px solid #ccc;
     flex : 1;
     display : flex;
     flex-direction: column;
@@ -56,32 +60,56 @@ const Card = styled.div`
     }
   
     .link {
-      display : flex;
-      flex-wrap: wrap;
-      margin : 50px -5px 0;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      margin : 50px 0 0;
       font-size : 14px;
+      gap : 0 10px;
+
+      &.one {
+        grid-template-columns: repeat(1,1fr);
+      }
 
       a {
-        
-        flex : 1 1 calc(50% - 10px);
+
         text-align: center;
-        margin : 10px 5px 0;
         padding : 7.5px 0;
         border-radius: 10px;
         box-sizing: border-box;
         border : 2px solid #000;
+        transition: .4s;
+        transition-property: color,background;
+
+        &:hover {
+          color : #fff;
+        }
         
         &.github{
-          /* flex : 0 0 calc(100% - 10px);
-          margin-top : 0; */
+          grid-area: 2/span;
+          &:hover {
+            background : #000;
+          }
         }
 
         &.memoir {
           border-color : #b782fd;
+          &:hover {
+            background : #b782fd;
+          }
+        }
+
+        &.Notion {
+          border-color : #55cdff;
+          &:hover {
+            background : #55cdff;
+          }
         }
 
         &.demo {
           border-color : #ff4f4f;
+          &:hover {
+            background : #ff4f4f;
+          }
         }
 
       }
@@ -110,6 +138,10 @@ const Card = styled.div`
 
 `;
 
+interface Link {
+  name : string
+  link : string
+}
 
 interface Result {
   id : number
@@ -117,11 +149,7 @@ interface Result {
   title : string
   desc : string
   skill : string[]
-  link? : {
-    gitub? : string
-    memoir? : string
-    demo? : string
-  }
+  link : Link[]
 }
 
 
@@ -163,15 +191,17 @@ export default function Project() {
                     </dl>
                     {
                       e.link &&
-                      <div className="link">
+                      <div className={`link ${e.link.length === 1 ? "one" : ''}`}>
                         {
-                          e.link.gitub && <a href={e.link.gitub} target='_blank' className='github'>Github</a>
-                        }
-                        {
-                          e.link.memoir && <a href={e.link.memoir} target='_blank' className='memoir'>Memoir</a>
-                        }
-                        {
-                          e.link.demo && <a href={e.link.demo} target='_blank' className='demo'>Demo</a>
+                          e.link.map((e,i)=>
+                            <a 
+                              key={i} 
+                              href={e.link}
+                              target='_blank' 
+                              rel="noreferrer"
+                              className={e.name}
+                            >{e.name}</a>
+                          )
                         }
                       </div>
                     }

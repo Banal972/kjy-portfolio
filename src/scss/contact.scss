@@ -39,7 +39,7 @@
             top: 0;
             transform: translate(40%,-40%);
             z-index:1;
-            width: 600*100/1920*1vw;
+            width: calc(600*100/1920*1vw);
             &::after {
                 content: '';
                 display: block;
@@ -54,7 +54,7 @@
             }
 
             @include max(820){
-                width: 600*100/1280*1vw;
+                width: calc(600*100/1280*1vw);
             }
 
         }

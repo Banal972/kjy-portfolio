@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 
 // 메인의 아이콘 원형들
 export const Circle = styled.div`

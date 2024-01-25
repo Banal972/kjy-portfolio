@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from 'react'
 import { Circle, Jelly } from '../Component/component'
-import gsap from 'gsap';
 
 export default function Main() {
     
@@ -17,7 +15,7 @@ export default function Main() {
                 <dd>안녕하세요 프론트엔드 주니어 개발자 김지유 입니다. <span className='emoji'>☺️</span></dd>
             </dl>
             <div className="sns">
-                <Circle style={{width : 25}}> <img src="/images/github-mark.png" alt="깃헙" /> </Circle>
+                <Circle style={{width : 25}}> <a href="https://github.com/Banal972" target='_blank' rel='noreferrer'> <img src="/images/github-mark.png" alt="깃헙"/> </a> </Circle> 
             </div>
             <div className="teach">
                 <p>Teach Stack | </p>
