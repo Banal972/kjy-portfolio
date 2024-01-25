@@ -29,9 +29,43 @@ export const Circle = styled.div`
 export const PageTitle = styled.h1`
     font-size : 24px;
     font-weight : bold;
+
+    @media screen and (max-width:820px) {
+        font-size : 20px;
+    }
+
 `;
 
 
 export const Wrap = styled.div`
     padding: 125px 2.5%;
+    
+    @media screen and (max-width:820px) {
+        padding: 125px 2.5% 100px;
+    }
+
 `
+
+export const MaxWrap = styled.div`
+    max-width: 1280px;
+    margin: 0 auto;
+    width : 90%;
+    position: relative;
+    z-index : 3;
+`;
+
+
+export const Jelly = styled.div`
+    width: 500px;
+    background: rgb(218, 154, 218);
+    border-radius: 60% 40% 50% 40% / 30% 40% 30% 50%;
+    position: absolute; transform: translateX(50%);
+    
+    &::after {
+        content: ''; 
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+`;

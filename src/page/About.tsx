@@ -1,39 +1,57 @@
 import React from 'react'
-import { PageTitle, Wrap } from '../Component/component'
+import { MaxWrap, PageTitle, Wrap } from '../Component/component'
 import styled from 'styled-components'
 
 const Layout = styled.ul`
 
     margin-top : 200px;
+    line-height: 1.5;
 
     > li {
         + li {
-            margin-top : 125px;
+            margin-top : 100px;
         }
 
         h2 {
-            font-size : 28px;
+            font-size : 24px;
             font-weight : bold;
         }
 
-        p {
-            line-height: 1.5;
-            font-size : 18px;
-            margin-top : 35px;
+        > p {
+            font-size : 16px;
+            margin-top : 30px;
         }
 
         dl {
-            margin-top : 50px;
+            margin-top : 30px;
+            + dl {
+                margin-top : 40px;
+            }
             dt {
-                font-size : 20px;
-                font-weight : 500;
+                font-size : 18px;
+                font-weight : bold;
             }
             dd {
                 margin-top : 20px;
+                > p {
+                    font-size : 16px;
+                }
                 ul {
-                    list-style: disc;
+                    margin-top : 15px;
                     li {
-                        font-size : 18px;
+                        font-size : 16px;
+                        display: flex;
+                        &::before {
+                            display: block; 
+                            width: 5px; 
+                            height: 5px;
+                            border-radius: 100px;
+                            background: #000;
+                            content: '';
+                            margin-right : 5px;
+                            flex : 0 0 auto;
+                            transform: translateY(180%);
+                        }
                         + li {
                             margin-top : 10px;
                         }
@@ -44,16 +62,49 @@ const Layout = styled.ul`
 
     }
 
+    @media screen and (max-width:820px) {
+        
+        margin-top : 100px;
+
+        > li {
+
+            h2 {
+                font-size : 20px;
+            }
+    
+            > p {
+                font-size : 14px;
+            }
+    
+            dl {
+                dt {
+                    font-size : 16px;
+                }
+                dd {
+                    > p {
+                        font-size : 14px;
+                    }
+                    ul {
+                        li {
+                            font-size : 14px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
 `;
 
-const MaxWrap = styled.div`
-    max-width: 1280px;
-    margin: 0 auto;
-`;
 
 export default function About() {
   return (
-    <Wrap className="_about" style={{padding : "250px 0"}}>
+    <Wrap className="_about">
+
+        <div className="jelly"></div>
+        <div className="jelly jelly2"></div>
         
         <MaxWrap>
 

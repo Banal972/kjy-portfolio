@@ -57,18 +57,6 @@
         }
     }
 
-    .jelly {
-        width: 500px;
-        background: rgb(218, 154, 218);
-        border-radius: 60% 40% 50% 40% / 30% 40% 30% 50%;
-        position: absolute; transform: translateX(50%);
-        &::after {
-            content: ''; 
-            display: block;
-            padding-bottom: 100%;
-        }
-    }
-
     @include max(1280){
 
         .tbx {

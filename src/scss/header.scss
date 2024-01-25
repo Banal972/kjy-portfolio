@@ -8,6 +8,8 @@
     justify-content: space-between;
     box-sizing: border-box;
     padding: 25px 2.5%;
+    z-index: 999;
+    background: #fff;
 
     .name {
         font-size: 28px;
@@ -28,35 +30,6 @@
 
     }
 
-    .menu {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 25px;
-        height: 15px;
-        right: 2.5%;
-        cursor: pointer;
-        display: none;
-        span {
-            position: absolute;
-            background: #000;
-            width: 100%;
-            left: 0;
-            height: 2px;
-            @for $i from 0 to 3 {
-                &:nth-of-type(#{$i}){
-                    top: calc(50% * $i);
-                }
-            }
-        }
-
-        @include max(820) {
-            display: block;
-        }
-
-    }
-
-
     @include max(1024){
 
         .name {
@@ -71,10 +44,46 @@
 
     @include max(820) {
 
+        padding: 15px 2.5%;
+
         .gnb {
             display: none;
         }
 
     }
+
+}
+
+
+.mob-header {
+
+    position: fixed; 
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 400px;
+    z-index: 9999;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 50px 2.5%;
+
+    ul {
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        li {
+            font-size: 40px;
+            font-weight: bold;
+            + li {
+                margin-top: 1em;
+            }
+        }
+    }
+    
 
 }

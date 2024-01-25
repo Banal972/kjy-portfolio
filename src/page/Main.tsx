@@ -1,8 +1,10 @@
 import React from 'react'
-import { Circle } from '../Component/component'
+import { Circle, Jelly } from '../Component/component'
 
 export default function Main() {
+    
   return (
+
     <div className="_main">
 
         <div className="tbx">
@@ -33,8 +35,10 @@ export default function Main() {
             </div>
         </div>
 
-        <div className="jelly"></div>
+        <Jelly/>
 
     </div>
+
   )
+  
 }
