@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Link, useLocation } from 'react-router-dom'
 
 const Menu = styled.div`
 
@@ -62,10 +62,13 @@ interface Router{
 
 interface MOBHEADER{
   router : Router[]
+  onMenu : Boolean
   setOnMenu : React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function Header() {
+
+  const {pathname} = useLocation();
 
   // 라우터 배열처리
   const router : Router[] = [
@@ -90,6 +93,28 @@ export default function Header() {
   // 모바일 메뉴
   const [onMenu,setOnMenu] = useState(false);
 
+  // Resize
+  useEffect(()=>{
+
+    const resizeHandler = ()=>{
+      if(window.innerWidth >= 821) {
+        setOnMenu(false);
+      }
+    }
+
+    window.addEventListener('resize',resizeHandler);
+
+    return ()=>{
+      window.removeEventListener('resize',resizeHandler);
+    }
+
+  },[]);
+
+  // 라우터변경시
+  useEffect(()=>{
+    setOnMenu(false);
+  },[pathname])
+
   return (
     <>
       <header className='_header'>
@@ -102,29 +127,41 @@ export default function Header() {
           }
         </div>
 
-        <Menu style={{top: "50%",transform: "translateY(-50%)",}} onClick={()=>setOnMenu(true)}>
+        <Menu 
+          style={{top: "50%",transform: "translateY(-50%)"}} 
+          onClick={()=>setOnMenu(true)}
+        >
           <span></span>
           <span></span>
           <span></span>
         </Menu>
         
       </header>
-      {
-        onMenu && <MobHeader router={router} setOnMenu={setOnMenu}/>
-      }
+
+      <MobHeader 
+        router={router}
+        onMenu={onMenu}
+        setOnMenu={setOnMenu}
+      />
+
     </>
   )
 
 }
 
 function MobHeader(
-  {router,setOnMenu} : MOBHEADER
+  {router, onMenu, setOnMenu} : MOBHEADER
 ){
 
   return (
 
-    <div className="mob-header">
-      <Menu className='on' onClick={()=>{setOnMenu(false)}}>
+    <div 
+      className={`mob-header ${onMenu ? "on" : ""}`}
+    >
+      <Menu 
+        className='on' 
+        onClick={()=>{setOnMenu(false)}}
+      >
         <span></span>
         <span></span>
         <span></span>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+// 레이아웃
 import Header from './Layout/Header';
+// 라우터
 import Main from './page/Main';
 import Contact from './page/Contact';
 import Project from './page/Project';

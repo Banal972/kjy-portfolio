@@ -68,6 +68,12 @@
     border-left: 1px solid #ccc;
     box-sizing: border-box;
     padding: 50px 2.5%;
+    transform: translateX(100%);
+    transition: transform .4s;
+
+    &.on {
+        transform: translateX(0);
+    }
 
     ul {
         text-align: center;

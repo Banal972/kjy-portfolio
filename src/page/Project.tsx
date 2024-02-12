@@ -90,14 +90,14 @@ const Card = styled.div`
           color : #fff;
         }
         
-        &.github{
+        &.Github{
           grid-area: 2/span;
           &:hover {
             background : #000;
           }
         }
 
-        &.memoir {
+        &.Memoir {
           border-color : #b782fd;
           &:hover {
             background : #b782fd;
@@ -111,7 +111,7 @@ const Card = styled.div`
           }
         }
 
-        &.demo {
+        &.Demo {
           border-color : #ff4f4f;
           &:hover {
             background : #ff4f4f;
