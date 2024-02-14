@@ -70,7 +70,7 @@
             z-index: 2;
             overflow: hidden;
 
-            &::after {
+            /* &::after {
                 content: '준비중 입니다.';
                 position: absolute;
                 left: 0;
@@ -82,7 +82,7 @@
                 align-items: center;
                 justify-content: center;
                 color: #fff;
-            }
+            } */
     
             .input-box {
                 position: relative;

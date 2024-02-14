@@ -70,7 +70,7 @@ const Card = styled.div`
       grid-template-columns: repeat(2,1fr);
       margin : 25px 0 0;
       font-size : 14px;
-      gap : 0 10px;
+      gap : 10px;
 
       &.one {
         grid-template-columns: repeat(1,1fr);
@@ -91,7 +91,6 @@ const Card = styled.div`
         }
         
         &.Github{
-          grid-area: 2/span;
           &:hover {
             background : #000;
           }
@@ -99,6 +98,7 @@ const Card = styled.div`
 
         &.Memoir {
           border-color : #b782fd;
+          grid-column: 1/3;
           &:hover {
             background : #b782fd;
           }
@@ -169,7 +169,7 @@ export default function Project() {
 
     if(api){
       axios.get(api)
-      .then(({data})=>{
+      .then(({data} : {data : Result[]})=>{
         setResult(data);
       })
       .catch(e=>{
@@ -212,7 +212,7 @@ export default function Project() {
                               target='_blank' 
                               rel="noreferrer"
                               className={e.name}
-                            >{e.name}</a>
+                            >{e.name === "Memoir" ? "설명" : e.name}</a>
                           )
                         }
                       </div>
